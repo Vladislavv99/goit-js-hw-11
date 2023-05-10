@@ -1,1 +1,63 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+.search-form {
+    background-color: aqua;
+    padding: 10px;
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.form-input {
+    margin-right: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.form-btn{
+    border-radius: 10px;
+    background-color: rgb(253, 252, 251);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-btn:hover{
+    background-color: chartreuse;
+}
+
+.gallery{
+    padding: 70px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        object-fit: cover;
+        gap: 25px;
+        color: black;
+}
+
+.info {
+    color: rgb(0, 0, 0);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.info-item {
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.photo-card {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.photo-card:hover {
+    transform: scale(1.1);
+}
