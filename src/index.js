@@ -17,7 +17,7 @@ const RESULTS_PER_PAGE = 40;
 let totalPages = 1;
 let totalImages = 1;
 let page = 1;
-let searchTerm = '';
+let searchQuery = '';
 let markup = '';
 let lastImage;
 
@@ -26,7 +26,7 @@ let observer = new IntersectionObserver(
     entrys.forEach(entry => {
       if (entry.isIntersecting) {
         page++;
-        layoutUtils.refreshImagesList(searchTerm, page, RESULTS_PER_PAGE);
+        layoutUtils.refreshImagesList(searchQuery, page, RESULTS_PER_PAGE);
       }
     });
   },
@@ -42,11 +42,11 @@ const handleFormUtils = {
     page = 1;
     markup = '';
     refs.galleryCards.innerHTML = '';
-    searchTerm = '';
+    searchQuery = '';
     if (`${refs.form['searchQuery'].value}` !== '') {
-      searchTerm = `${refs.form['searchQuery'].value}`;
+      searchQuery = `${refs.form['searchQuery'].value}`;
     }
-    layoutUtils.refreshImagesList(searchTerm, page, RESULTS_PER_PAGE);
+    layoutUtils.refreshImagesList(searchQuery, page, RESULTS_PER_PAGE);
   },
 };
 
@@ -111,8 +111,8 @@ const layoutUtils = {
     }
   },
 
-  refreshImagesList: function (searchTerm, page, RESULTS_PER_PAGE) {
-    services.getImages(searchTerm, page, RESULTS_PER_PAGE).then(images => {
+  refreshImagesList: function (searchQuery, page, RESULTS_PER_PAGE) {
+    services.getImages(searchQuery, page, RESULTS_PER_PAGE).then(images => {
       if (images.data.hits.length === 0) {
         Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
