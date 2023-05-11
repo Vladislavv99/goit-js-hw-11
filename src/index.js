@@ -1,4 +1,4 @@
-import { services } from './js/axios.js';
+import { services } from './js/getImg.js';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
