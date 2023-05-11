@@ -1,6 +1,6 @@
 export { services };
 
-const axios = require('axios');
+const axios = require('axios/dist/browser/axios.cjs');
 
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '36260944-793d422ca89e59203aaed5090';
